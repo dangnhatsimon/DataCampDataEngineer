@@ -1,0 +1,14 @@
+The central piece in an Airflow workflow is the DAG, which is an acronym for Directed Acyclic Graph. 
+A graph is a collection of nodes that are connected by edges. The “directed” part in the acronym implies that there is a sense of direction between the nodes. 
+The arrows on the edges indicate the direction. 
+The “acyclic” part simply means that when you traverse the directed graph, there is no way for you to circle back to the same node.
+
+
+In Airflow, the nodes are “operators”, each instance of which can be given a unique label, the task id. 
+Operators do something, like run a Python script, or schedule tasks with a cloud provider. 
+They’re triggered by a scheduler, but executed by an executor, which is typically a different process.
+
+In code, an Airflow DAG requires a “dag_id”. 
+Some of the most common optional arguments are the “schedule_interval” where you can pass a cron schedule, 
+and a date on which the DAG should start. 
+Operators are assigned to this DAG later in the code.
