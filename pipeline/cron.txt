@@ -1,0 +1,17 @@
+Oftentimes we have tasks that need to run on a schedule. Churn prediction algorithms might need to be run weekly for example. 
+An often used software utility in such cases is “cron”. 
+Cron reads configuration files, known as “crontab” files. 
+In these files, you tabulate tasks that you want to run at a specific time. 
+Here’s an example. 
+
+*/15 9-17 * * 1-3,5 log_my_activity
+# minutes   hours   days    months days of the week    command
+
+This crontab record would execute the process “log_my_activity” at a specific time, which, read from left to right, would mean:
+every 15 minutes,
+between normal office hours,
+every day of the month,
+for every month,
+but only Mondays, Tuesdays, Wednesdays and Fridays.
+
+The fields of this time notation are delimited by whitespace. 

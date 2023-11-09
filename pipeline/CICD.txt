@@ -1,0 +1,25 @@
+CI/CD stands for Continuous Integration and Continuous Delivery. 
+The first term has come to represent the practice of integrating code changes as soon as possible with the code that runs in production, 
+which is called the master branch. This should only be allowed if the changes didn’t break anything, which tests can detect to some degree. 
+So Continuous Integration focuses a lot on running tests and having plenty of them. 
+The second term means that all artifacts should always be in deployable state at any time without any problem. 
+When you push your code as part of some version control system to some remote server, 
+you can also trigger running unit tests and static code checks, like compliancy with PEP8, which is the Python style guide.
+
+CircleCI is a service that runs tests automatically for you. Like many of these tools, it’s looking for a specific file in your code repository. 
+For CircleCI, it’s “config.yml” in the .circleci folder, which should be at the root of your code repository. 
+The syntax is YAML, which is a superset of JSON, but has a different focus and adds many features. 
+In the config file there’s a section called “jobs”. Each job has a name, like “test”. 
+The job is a collection of steps that get executed in some environment, in this case a Docker image designed for a specific version of Python. 
+The steps are executed in sequence and would typically be the steps that you would execute manually if you were given a new project. 
+In this case, we instruct CircleCI to check out the code from the code repository, to install the modules we require, and to run the test suite with pytest. 
+If your tests were successful, you could package the application and deploy it on a server or store it for later use.
+
+jobs:
+  test:
+    docker:
+      - image: circleci/python: 3.6.4
+    steps:
+      - checkout
+      - run: pip install -r requirement.txt
+      - run: pytest
