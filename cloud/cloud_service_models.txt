@@ -1,0 +1,16 @@
+On-premise: You are responsible for everything include networking, storage, physical, virtual servers, O/S, middleware, runtime, data, applications.
+
+IaaS: Infrastructure as a Service. You 'rent' the fundamental building blocks of computing: networking, storage, and physical or virtual servers. 
+IaaS gives users cloud-based alternatives to on-premise infrastructure. 
+It provides scalable cloud-based alternatives to expensive on-premise infrastructure.
+Users: system admins.
+
+PaaS: Platform as a Service. As well as the underlying infrastructure, this will include the tools and software that developers need to build applications on top of: that could include operating systems, middleware, and runtime. 
+PaaS provides hardware and software tools over the internet that people can use to develop applications. 
+Developers don’t need to start from scratch when creating applications, saving a lot of time on writing extensive code.
+Users: developers.
+
+SaaS: Software-as-a-Service.  The underlying hardware and operating system is irrelevant to the end user, who will access the service via a web browser or app.
+SaaS makes software available to users over the internet, usually for a monthly subscription fee. 
+No need to install software on your computer since everything is available over the internet, accessible from any device.
+Users: end customers.

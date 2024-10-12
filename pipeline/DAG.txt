@@ -1,0 +1,42 @@
+The central piece in an Airflow workflow is the DAG, which is an acronym for Directed Acyclic Graph. 
+A graph is a collection of nodes that are connected by edges. The “directed” part in the acronym implies that there is a sense of direction between the nodes. 
+The arrows on the edges indicate the direction. 
+The “acyclic” part simply means that when you traverse the directed graph, there is no way for you to circle back to the same node.
+
+
+In Airflow, the nodes are “operators”, each instance of which can be given a unique label, the task id. 
+Operators do something, like run a Python script, or schedule tasks with a cloud provider. 
+They’re triggered by a scheduler, but executed by an executor, which is typically a different process.
+
+In code, an Airflow DAG requires a “dag_id”. 
+Some of the most common optional arguments are the “schedule_interval” where you can pass a cron schedule, 
+and a date on which the DAG should start. 
+Operators are assigned to this DAG later in the code.
+
+from airflow import DAG
+my_dag=DAG(
+    dag_id="publish_logs",
+    schedule_interval="* * * * *"
+    start_date=datetime(2010,1,1)
+)
+
+Tasks are essentially instances of operator classes. Airflow comes with many, but you can also define your own operators. 
+They’re typically named after what they do: a “BashOperator” runs a bash command, a “PythonOperator” runs a Python script, 
+and "SparkSubmitOperator" submit a Spark job with a cluster.
+
+Dependencies between operators are coded with the “set_upstream()” and “set_downstream()” methods, 
+like this: You could also define these same relationships using the bit shift operator, like so: These could even be chained, 
+like this: A simple DAG description like this would result in a linear flow as shown in this image. 
+Note that the arguments of the operators allow you to specify non-default conditions like “run if any of the tasks directly upstream fails”.
+
+dag=DAG(...)
+task1=BashOperator(...)
+task2=PythonOperator(...)
+task3=BashOperator(...)
+task1.set_downstream(task2)
+task3.set_upstream(task2)
+# equivalent, but shorter:
+# task1 >> task2
+# task3 << task2
+# Even clearer:
+# task1 >> task2 >> task3

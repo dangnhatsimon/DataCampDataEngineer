@@ -1,0 +1,21 @@
+The private cloud model is private by design and designated for exclusive use by its tenants. 
+This means to access a private cloud, you need to connect to a network link, which means special network access needs to be set up by IT. 
+An organization may hire a third party to host their private cloud infrastructure or host it themselves. 
+The private cloud model can be appealing because infrastructure is designed for exclusive use. 
+pros: direct control of resources and data
+cons: more upfront investment.
+
+The public cloud infrastructure is shared and open for use by the general public. 
+The infrastructure is owned and managed by a cloud service provider, like AWS or Azure. Public clouds are Internet accessible. 
+pros: get started quickly with minimal investment, easier to scale.
+cons: no access to data center and hardware.
+
+Hybrid - This is when an organization uses a combination of two or more distinct models. 
+The different models interact with each other via a network link and can share data and services. 
+
+Multicloud combines different cloud provider services. 
+Multicloud provides flexibility on choosing pricing plans and service offerings. 
+It also reduces reliances on one vendor. 
+
+Community model - This is when the cloud's infrastructure is shared by a specific community for their exclusive use. 
+Usually this community has a shared interest or concern, whether it be having the same security requirements or jurisdiction, or sharing a mission

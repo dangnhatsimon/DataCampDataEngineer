@@ -1,0 +1,13 @@
+Cloud computing is the delivery of technology services - including compute, storage, databases, networking, software, and many more - over the internet with pay-as-you-go pricing. 
+So, rather than owning your own computing infrastructure or data centers, you can rent access to these different services from a cloud service provider, like Amazon AWS, Microsoft Azure, or Google Cloud Platform. 
+
+Cloud:
+1. Scalable
+2. Fast set-up speed
+3. Pay-as-you-go
+On-premise:
+
+1. Less scalable
+2. Takes time to set up
+3. Ongoing costs
+

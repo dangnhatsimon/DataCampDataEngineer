@@ -1,0 +1,6 @@
+An example of data privacy law is the European Union's General Data Protection Regulation, or GDPR.
+It regulates how personal data is collected, processed, and stored from users in the European Union.
+
+Personal Data - any information that relates to an identified or identifiable living individual. 
+Different pieces of information, which collected together can lead to the identification of a particular person, also constitute personal data..
+Personal data is often referred to as PII, which stands for personally identifiable information.
